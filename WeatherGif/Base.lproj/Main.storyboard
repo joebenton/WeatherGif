@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Forecast View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherGif" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ForecastViewController" customModule="WeatherGif" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,11 +35,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-xo-Dhn">
+                                <rect key="frame" x="166" y="373" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="DNf-xo-Dhn" firstAttribute="top" secondItem="pyX-01-8hx" secondAttribute="bottom" constant="19" id="9bW-N1-3KQ"/>
                             <constraint firstItem="pyX-01-8hx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="D73-la-hgU"/>
                             <constraint firstItem="pyX-01-8hx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R4u-oK-tl8"/>
+                            <constraint firstItem="DNf-xo-Dhn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aBx-NH-05T"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="daF-gh-EHL" secondAttribute="bottom" id="bio-Rb-hcf"/>
                             <constraint firstItem="daF-gh-EHL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bpv-DU-Sp3"/>
                             <constraint firstItem="pyX-01-8hx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cAR-Q3-99O"/>
@@ -47,6 +55,11 @@
                             <constraint firstItem="daF-gh-EHL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uF2-1K-010"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="temperatureLabel" destination="DNf-xo-Dhn" id="woe-Pg-DTV"/>
+                        <outlet property="weatherGifWebView" destination="daF-gh-EHL" id="k8C-W3-X5B"/>
+                        <outlet property="weatherTypeLabel" destination="pyX-01-8hx" id="hcy-CL-wio"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
