@@ -12,7 +12,7 @@ class DataManager {
     
     var forecastRepository: ForecastRepository = DarkSkiesImpl()
     
-    func getForecast(withLatitude lat: Double, withLongitude lng: Double, completion: (_ forecast: Forecast?, _ errorMessage: String?) -> Void) {
+    func getForecast(withLatitude lat: Double, withLongitude lng: Double, completion: @escaping (_ forecast: Forecast?, _ errorMessage: String?) -> Void) {
         forecastRepository.getForecast(withLatitude: lat, withLongitude: lng) { (forecast, errorMessage) in
             completion(forecast, errorMessage)
         }

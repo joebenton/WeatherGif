@@ -9,6 +9,19 @@
 import Foundation
 
 struct Forecast {
-    let weatherSummary: String
-    let temperature: String
+    var weatherSummary: String?
+    var temperature: Double?
+    
+    init(jsonDictionary: Dictionary<String, Any>) {
+        if let currentlyDict = jsonDictionary["currently"] as? Dictionary<String,Any> {
+            
+            if let summary = currentlyDict["summary"] as? String {
+                self.weatherSummary = summary
+            }
+            
+            if let temperature = currentlyDict["temperature"] as? Double {
+                self.temperature = temperature
+            }
+        }
+    }
 }

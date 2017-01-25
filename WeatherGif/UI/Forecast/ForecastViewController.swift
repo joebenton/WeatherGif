@@ -32,7 +32,9 @@ class ForecastViewController: UIViewController {
 extension ForecastViewController: ForecastView {
     func setForecast(forecast: Forecast) {
         weatherTypeLabel.text = forecast.weatherSummary
-        temperatureLabel.text = forecast.temperature
+        if let temperature = forecast.temperature {
+            temperatureLabel.text = String(temperature)
+        }
     }
     
     func requestLocationAuthorization() {

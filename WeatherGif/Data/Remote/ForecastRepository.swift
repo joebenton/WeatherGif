@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ForecastRepository {
-    func getForecast(withLatitude lat: Double, withLongitude lng: Double, completion: (_ forecast: Forecast?, _ errorMessage: String?) -> Void)
+    func getForecast(withLatitude lat: Double, withLongitude lng: Double, completion: @escaping (_ forecast: Forecast?, _ errorMessage: String?) -> Void)
 }
