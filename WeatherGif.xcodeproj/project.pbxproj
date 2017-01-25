@@ -77,6 +77,9 @@
 		D8D94E411E38F43C00AF8E3C /* WeatherGif */ = {
 			isa = PBXGroup;
 			children = (
+				D8D94E621E38F56D00AF8E3C /* Data */,
+				D8D94E631E38F59900AF8E3C /* UI */,
+				D8D94E641E38F5AD00AF8E3C /* Util */,
 				D8D94E421E38F43C00AF8E3C /* AppDelegate.swift */,
 				D8D94E441E38F43C00AF8E3C /* ViewController.swift */,
 				D8D94E461E38F43C00AF8E3C /* Main.storyboard */,
@@ -94,6 +97,59 @@
 				D8D94E591E38F43C00AF8E3C /* Info.plist */,
 			);
 			path = WeatherGifTests;
+			sourceTree = "<group>";
+		};
+		D8D94E621E38F56D00AF8E3C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D8D94E651E38F5C300AF8E3C /* Model */,
+				D8D94E661E38F5D100AF8E3C /* Local */,
+				D8D94E671E38F5DD00AF8E3C /* Remote */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D8D94E631E38F59900AF8E3C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D8D94E681E38F67700AF8E3C /* Forecast */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D8D94E641E38F5AD00AF8E3C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D8D94E651E38F5C300AF8E3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D8D94E661E38F5D100AF8E3C /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		D8D94E671E38F5DD00AF8E3C /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Remote;
+			sourceTree = "<group>";
+		};
+		D8D94E681E38F67700AF8E3C /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Forecast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
