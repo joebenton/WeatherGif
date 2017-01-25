@@ -14,6 +14,7 @@ protocol ForecastView {
     func requestLocationAuthorization()
     func startUpdatingLocation()
     func stopUpdatingLocation()
+    func setGifImage(gif: Gif)
 }
 
 class ForecastPresenter {
@@ -22,6 +23,7 @@ class ForecastPresenter {
     fileprivate var dataManager: DataManager?
     fileprivate var currentLocation: CLLocation?
     fileprivate var forecast: Forecast?
+    fileprivate var gif: Gif?
     
     init(view: ForecastView, dataManager: DataManager? = DataManager()) {
         self.view = view
@@ -38,6 +40,18 @@ class ForecastPresenter {
                 self.forecast = forecast
                 
                 self.view?.setForecast(forecast: forecast)
+            } else if let errorMessage = errorMessage {
+                print(errorMessage)
+            }
+        })
+    }
+    
+    func getWeatherGif() {
+        dataManager?.getRandomGif(tag: "", completion: { (gif, errorMessage) in
+            if let gif = gif {
+                self.gif = gif
+                
+                self.view?.setGifImage(gif: gif)
             } else if let errorMessage = errorMessage {
                 print(errorMessage)
             }

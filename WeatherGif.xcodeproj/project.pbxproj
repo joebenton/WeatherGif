@@ -20,6 +20,9 @@
 		D8D94E701E38FC9700AF8E3C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D94E6F1E38FC9700AF8E3C /* DataManager.swift */; };
 		D8D94E721E38FCF000AF8E3C /* ForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D94E711E38FCF000AF8E3C /* ForecastRepository.swift */; };
 		D8D94E741E38FD4600AF8E3C /* DarkSkiesImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D94E731E38FD4600AF8E3C /* DarkSkiesImpl.swift */; };
+		D8D94E761E390FC400AF8E3C /* GifRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D94E751E390FC400AF8E3C /* GifRepository.swift */; };
+		D8D94E781E39103000AF8E3C /* GiphyAPIImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D94E771E39103000AF8E3C /* GiphyAPIImpl.swift */; };
+		D8D94E7A1E39112F00AF8E3C /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D94E791E39112F00AF8E3C /* Gif.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		D8D94E6F1E38FC9700AF8E3C /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D8D94E711E38FCF000AF8E3C /* ForecastRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastRepository.swift; sourceTree = "<group>"; };
 		D8D94E731E38FD4600AF8E3C /* DarkSkiesImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkiesImpl.swift; sourceTree = "<group>"; };
+		D8D94E751E390FC400AF8E3C /* GifRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifRepository.swift; sourceTree = "<group>"; };
+		D8D94E771E39103000AF8E3C /* GiphyAPIImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyAPIImpl.swift; sourceTree = "<group>"; };
+		D8D94E791E39112F00AF8E3C /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		F045EC41540AD1324F6C6E7B /* Pods-WeatherGif.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGif.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherGif/Pods-WeatherGif.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				D8D94E6D1E38FA1B00AF8E3C /* Forecast.swift */,
+				D8D94E791E39112F00AF8E3C /* Gif.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +184,8 @@
 			children = (
 				D8D94E711E38FCF000AF8E3C /* ForecastRepository.swift */,
 				D8D94E731E38FD4600AF8E3C /* DarkSkiesImpl.swift */,
+				D8D94E751E390FC400AF8E3C /* GifRepository.swift */,
+				D8D94E771E39103000AF8E3C /* GiphyAPIImpl.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -403,8 +412,11 @@
 			files = (
 				D8D94E721E38FCF000AF8E3C /* ForecastRepository.swift in Sources */,
 				D8D94E6E1E38FA1B00AF8E3C /* Forecast.swift in Sources */,
+				D8D94E781E39103000AF8E3C /* GiphyAPIImpl.swift in Sources */,
 				D8D94E741E38FD4600AF8E3C /* DarkSkiesImpl.swift in Sources */,
+				D8D94E7A1E39112F00AF8E3C /* Gif.swift in Sources */,
 				D8D94E701E38FC9700AF8E3C /* DataManager.swift in Sources */,
+				D8D94E761E390FC400AF8E3C /* GifRepository.swift in Sources */,
 				D8D94E431E38F43C00AF8E3C /* AppDelegate.swift in Sources */,
 				D8D94E6A1E38F8CF00AF8E3C /* ForecastViewController.swift in Sources */,
 				D8D94E6C1E38F8E000AF8E3C /* ForecastPresenter.swift in Sources */,

@@ -48,6 +48,9 @@ extension ForecastViewController: ForecastView {
     func stopUpdatingLocation() {
         locationManager?.stopUpdatingLocation()
     }
+    
+    func setGifImage(gif: Gif) {
+    }
 }
 
 extension ForecastViewController: CLLocationManagerDelegate {
