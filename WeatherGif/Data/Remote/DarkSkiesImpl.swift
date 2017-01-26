@@ -15,7 +15,7 @@ class DarkSkiesImpl: ForecastRepository {
     let forecastEndpoint = "/forecast"
     
     func getForecast(lat: Double, lng: Double, completion: @escaping (_ forecast: Forecast?, _ errorMessage: String?) -> Void) {
-        let url = "\(domain)\(forecastEndpoint)/\(apiKey)/\(lat),\(lng)"
+        let url = "\(domain)\(forecastEndpoint)/\(apiKey)/\(lat),\(lng)?exclude=[minutely,hourly,daily,alerts,flags]"
         
         Alamofire.request(url).responseJSON { response in
             if let JSON = response.result.value as? Dictionary<String, Any> {

@@ -38,7 +38,7 @@ extension ForecastViewController: ForecastView {
     func setForecast(forecast: Forecast) {
         weatherTypeLabel.text = forecast.weatherSummary
         if let temperature = forecast.temperature {
-            temperatureLabel.text = String(temperature)
+            temperatureLabel.text = "\(temperature) Degrees Outside"
         }
     }
     
