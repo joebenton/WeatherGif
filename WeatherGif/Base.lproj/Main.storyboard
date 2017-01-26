@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,21 +41,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2a-Jl-pWi">
+                                <rect key="frame" x="161" y="617" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D9N-Yo-tHh"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DcZ-NW-MPF">
+                                <rect key="frame" x="177" y="622" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DNf-xo-Dhn" firstAttribute="top" secondItem="pyX-01-8hx" secondAttribute="bottom" constant="19" id="9bW-N1-3KQ"/>
                             <constraint firstItem="pyX-01-8hx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="D73-la-hgU"/>
+                            <constraint firstItem="DcZ-NW-MPF" firstAttribute="centerX" secondItem="U2a-Jl-pWi" secondAttribute="centerX" id="GtQ-wd-4Hh"/>
+                            <constraint firstItem="DcZ-NW-MPF" firstAttribute="centerY" secondItem="U2a-Jl-pWi" secondAttribute="centerY" id="PlN-Ux-hje"/>
                             <constraint firstItem="pyX-01-8hx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R4u-oK-tl8"/>
                             <constraint firstItem="DNf-xo-Dhn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aBx-NH-05T"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="daF-gh-EHL" secondAttribute="bottom" id="bio-Rb-hcf"/>
                             <constraint firstItem="daF-gh-EHL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bpv-DU-Sp3"/>
                             <constraint firstItem="pyX-01-8hx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cAR-Q3-99O"/>
                             <constraint firstAttribute="trailing" secondItem="daF-gh-EHL" secondAttribute="trailing" id="mkW-eZ-Ssv"/>
+                            <constraint firstItem="U2a-Jl-pWi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rCl-9H-bFb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U2a-Jl-pWi" secondAttribute="bottom" constant="20" id="scB-rN-eO3"/>
                             <constraint firstItem="daF-gh-EHL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uF2-1K-010"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="DcZ-NW-MPF" id="NSB-zB-kTJ"/>
+                        <outlet property="refreshBtn" destination="U2a-Jl-pWi" id="8Xi-E3-qZr"/>
                         <outlet property="temperatureLabel" destination="DNf-xo-Dhn" id="woe-Pg-DTV"/>
                         <outlet property="weatherGifWebView" destination="daF-gh-EHL" id="k8C-W3-X5B"/>
                         <outlet property="weatherTypeLabel" destination="pyX-01-8hx" id="hcy-CL-wio"/>

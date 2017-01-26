@@ -9,13 +9,13 @@
 import Foundation
 
 struct Gif {
-    var gifImageUrl: String?
+    var imageUrl: String?
     
     init(jsonDictionary: Dictionary<String, Any>) {
         if let dataDict = jsonDictionary["data"] as? Dictionary<String,Any> {
             
             if let imageUrl = dataDict["image_url"] as? String {
-                self.gifImageUrl = imageUrl
+                self.imageUrl = imageUrl
             }
         }
     }

@@ -16,7 +16,6 @@ class GiphyAPIImpl: GifRepository {
     
     func getRandomGif(tag: String, completion: @escaping (_ gif: Gif?, _ errorMessage: String?) -> Void) {
         let url = "\(domain)\(randomEndpoint)?api_key=\(apiKey)&tag=\(tag)"
-        print(url)
     
         Alamofire.request(url).responseJSON { response in
             if let JSON = response.result.value as? Dictionary<String, Any> {

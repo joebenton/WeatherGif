@@ -10,11 +10,11 @@ import Foundation
 
 class DataManager {
     
-    var forecastRepository: ForecastRepository = DarkSkiesImpl()
-    var gifRepository: GifRepository = GiphyAPIImpl()
+    fileprivate var forecastRepository: ForecastRepository = DarkSkiesImpl()
+    fileprivate var gifRepository: GifRepository = GiphyAPIImpl()
     
-    func getForecast(withLatitude lat: Double, withLongitude lng: Double, completion: @escaping (_ forecast: Forecast?, _ errorMessage: String?) -> Void) {
-        forecastRepository.getForecast(withLatitude: lat, withLongitude: lng) { (forecast, errorMessage) in
+    func getForecast(lat: Double, lng: Double, completion: @escaping (_ forecast: Forecast?, _ errorMessage: String?) -> Void) {
+        forecastRepository.getForecast(lat: lat, lng: lng) { (forecast, errorMessage) in
             completion(forecast, errorMessage)
         }
     }

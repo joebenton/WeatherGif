@@ -17,6 +17,8 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var weatherGifWebView: UIWebView!
     @IBOutlet weak var weatherTypeLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var refreshBtn: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,9 @@ class ForecastViewController: UIViewController {
         
         presenter = ForecastPresenter(view: self)
         presenter?.getLocation()
+    }
+    @IBAction func refreshBtnPressed(_ sender: Any) {
+        presenter?.refreshPressed()
     }
 }
 
@@ -50,12 +55,23 @@ extension ForecastViewController: ForecastView {
     }
     
     func setGifImage(gif: Gif) {
-        guard let gifUrlString = gif.gifImageUrl else {
+        guard let gifUrlString = gif.imageUrl else {
             return
         }
         
         if let gifUrl = URL(string: gifUrlString) {
             weatherGifWebView.loadRequest(URLRequest(url: gifUrl))
+        }
+    }
+    
+    func toggleLoadingState(loading: Bool) {
+        switch loading {
+        case true:
+            loadingIndicator.startAnimating()
+            refreshBtn.isHidden = true
+        case false:
+            loadingIndicator.stopAnimating()
+            refreshBtn.isHidden = false
         }
     }
 }

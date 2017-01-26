@@ -15,6 +15,7 @@ protocol ForecastView {
     func startUpdatingLocation()
     func stopUpdatingLocation()
     func setGifImage(gif: Gif)
+    func toggleLoadingState(loading: Bool)
 }
 
 class ForecastPresenter {
@@ -35,7 +36,9 @@ class ForecastPresenter {
             return
         }
         
-        dataManager?.getForecast(withLatitude: lat, withLongitude: lng, completion: { (forecast, errorMessage) in
+        view?.toggleLoadingState(loading: true)
+        
+        dataManager?.getForecast(lat: lat, lng: lng, completion: { (forecast, errorMessage) in
             if let forecast = forecast {
                 self.forecast = forecast
                 
@@ -44,6 +47,8 @@ class ForecastPresenter {
                 self.getWeatherGif()
             } else if let errorMessage = errorMessage {
                 print(errorMessage)
+                
+                self.view?.toggleLoadingState(loading: false)
             }
         })
     }
@@ -61,6 +66,8 @@ class ForecastPresenter {
             } else if let errorMessage = errorMessage {
                 print(errorMessage)
             }
+            
+            self.view?.toggleLoadingState(loading: false)
         })
     }
     
@@ -81,6 +88,10 @@ class ForecastPresenter {
             
             getWeatherForecast()
         }
+    }
+    
+    func refreshPressed() {
+        getWeatherForecast()
     }
 }
 
