@@ -50,6 +50,13 @@ extension ForecastViewController: ForecastView {
     }
     
     func setGifImage(gif: Gif) {
+        guard let gifUrlString = gif.gifImageUrl else {
+            return
+        }
+        
+        if let gifUrl = URL(string: gifUrlString) {
+            weatherGifWebView.loadRequest(URLRequest(url: gifUrl))
+        }
     }
 }
 

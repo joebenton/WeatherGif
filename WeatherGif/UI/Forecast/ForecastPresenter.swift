@@ -40,6 +40,8 @@ class ForecastPresenter {
                 self.forecast = forecast
                 
                 self.view?.setForecast(forecast: forecast)
+                
+                self.getWeatherGif()
             } else if let errorMessage = errorMessage {
                 print(errorMessage)
             }
@@ -47,7 +49,11 @@ class ForecastPresenter {
     }
     
     func getWeatherGif() {
-        dataManager?.getRandomGif(tag: "", completion: { (gif, errorMessage) in
+        guard let forecastSummary = forecast?.weatherSummary else {
+            return
+        }
+        
+        dataManager?.getRandomGif(tag: forecastSummary, completion: { (gif, errorMessage) in
             if let gif = gif {
                 self.gif = gif
                 
