@@ -21,6 +21,8 @@ class DarkSkiesImpl: ForecastRepository {
             if let JSON = response.result.value as? Dictionary<String, Any> {
                 let forecast = Forecast(jsonDictionary: JSON)
                 completion(forecast, nil)
+            } else if let error = response.result.error {
+                print(error.localizedDescription)
             }
         }
     }
