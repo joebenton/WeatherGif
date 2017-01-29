@@ -1,5 +1,5 @@
 //
-//  DarkSkiesImpl.swift
+//  DarkSkiesAPIImpl.swift
 //  WeatherGif
 //
 //  Created by Joe on 25/01/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class DarkSkiesImpl: ForecastRepository {
+class DarkSkiesAPIImpl: ForecastRepository {
     let apiKey = "e3600943b59b9ae256dde42ebef68348"
     let domain = "https://api.darksky.net"
     let forecastEndpoint = "/forecast"

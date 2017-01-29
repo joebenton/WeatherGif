@@ -10,7 +10,7 @@ import Foundation
 
 class DataManager {
     
-    fileprivate var forecastRepository: ForecastRepository = DarkSkiesImpl()
+    fileprivate var forecastRepository: ForecastRepository = DarkSkiesAPIImpl()
     fileprivate var gifRepository: GifRepository = GiphyAPIImpl()
     
     func getForecast(lat: Double, lng: Double, completion: @escaping (_ forecast: Forecast?, _ errorMessage: String?) -> Void) {
