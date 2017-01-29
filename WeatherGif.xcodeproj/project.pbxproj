@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		423358313A477CA7B35B829C /* Pods_WeatherGifTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6276CD9C0268E09D06F063B7 /* Pods_WeatherGifTests.framework */; };
 		9F1CBBC57A00C8318ECAEBE8 /* Pods_WeatherGif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0630087E8516DE3C2C920B79 /* Pods_WeatherGif.framework */; };
+		BB932B3C1E3E3E30002D3FE9 /* LocationManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB932B3B1E3E3E30002D3FE9 /* LocationManagerImpl.swift */; };
+		BB932B3E1E3E42CF002D3FE9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB932B3D1E3E42CF002D3FE9 /* LocationManager.swift */; };
 		D8D94E431E38F43C00AF8E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D94E421E38F43C00AF8E3C /* AppDelegate.swift */; };
 		D8D94E481E38F43C00AF8E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D94E461E38F43C00AF8E3C /* Main.storyboard */; };
 		D8D94E4A1E38F43C00AF8E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D94E491E38F43C00AF8E3C /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		28EBF35B496A41ED1FC887A3 /* Pods-WeatherGif.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGif.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherGif/Pods-WeatherGif.release.xcconfig"; sourceTree = "<group>"; };
 		6276CD9C0268E09D06F063B7 /* Pods_WeatherGifTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherGifTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35E28F9BEB8879EEC8251A9 /* Pods-WeatherGifTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGifTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherGifTests/Pods-WeatherGifTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB932B3B1E3E3E30002D3FE9 /* LocationManagerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerImpl.swift; sourceTree = "<group>"; };
+		BB932B3D1E3E42CF002D3FE9 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C1A51E726423B34C40A83911 /* Pods-WeatherGifTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGifTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherGifTests/Pods-WeatherGifTests.release.xcconfig"; sourceTree = "<group>"; };
 		D8D94E3F1E38F43C00AF8E3C /* WeatherGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D94E421E38F43C00AF8E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 		D8D94E661E38F5D100AF8E3C /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				BB932B3D1E3E42CF002D3FE9 /* LocationManager.swift */,
+				BB932B3B1E3E3E30002D3FE9 /* LocationManagerImpl.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -413,10 +419,12 @@
 				D8D94E721E38FCF000AF8E3C /* ForecastRepository.swift in Sources */,
 				D8D94E6E1E38FA1B00AF8E3C /* Forecast.swift in Sources */,
 				D8D94E781E39103000AF8E3C /* GiphyAPIImpl.swift in Sources */,
+				BB932B3C1E3E3E30002D3FE9 /* LocationManagerImpl.swift in Sources */,
 				D8D94E741E38FD4600AF8E3C /* DarkSkiesImpl.swift in Sources */,
 				D8D94E7A1E39112F00AF8E3C /* Gif.swift in Sources */,
 				D8D94E701E38FC9700AF8E3C /* DataManager.swift in Sources */,
 				D8D94E761E390FC400AF8E3C /* GifRepository.swift in Sources */,
+				BB932B3E1E3E42CF002D3FE9 /* LocationManager.swift in Sources */,
 				D8D94E431E38F43C00AF8E3C /* AppDelegate.swift in Sources */,
 				D8D94E6A1E38F8CF00AF8E3C /* ForecastViewController.swift in Sources */,
 				D8D94E6C1E38F8E000AF8E3C /* ForecastPresenter.swift in Sources */,

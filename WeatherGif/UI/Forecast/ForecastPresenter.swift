@@ -11,9 +11,6 @@ import CoreLocation
 
 protocol ForecastView {
     func setForecast(forecast: Forecast)
-    func requestLocationAuthorization()
-    func startUpdatingLocation()
-    func stopUpdatingLocation()
     func setGifImage(gif: Gif)
     func toggleLoadingState(loading: Bool)
 }
@@ -22,13 +19,20 @@ class ForecastPresenter {
     
     fileprivate var view: ForecastView?
     fileprivate var dataManager: DataManager?
+    fileprivate var locationManager: LocationManager?
     fileprivate var currentLocation: CLLocation?
     fileprivate var forecast: Forecast?
     fileprivate var gif: Gif?
     
-    init(view: ForecastView, dataManager: DataManager? = DataManager()) {
+    init(view: ForecastView, dataManager: DataManager? = DataManager(), locationManager: LocationManager? = LocationManagerImpl()) {
         self.view = view
         self.dataManager = dataManager
+        self.locationManager = locationManager
+        self.locationManager?.delegate = self
+    }
+    
+    func getLocation() {
+        locationManager?.requestLocationAuthorization()
     }
     
     func getWeatherForecast() {
@@ -71,27 +75,25 @@ class ForecastPresenter {
         })
     }
     
-    func getLocation() {
-        view?.requestLocationAuthorization()
+    func refreshPressed() {
+        getWeatherForecast()
     }
-    
+}
+
+extension ForecastPresenter: LocationManagerDelegate {
     func locationAuthorizationChanged(status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse || status == .authorizedAlways {
-            view?.startUpdatingLocation()
+            locationManager?.startUpdatingLocation()
         }
     }
     
     func didUpdateLocations(locations: [CLLocation]) {
         if locations.count > 0 {
             self.currentLocation = locations.first
-            view?.stopUpdatingLocation()
+            locationManager?.stopUpdatingLocation()
             
             getWeatherForecast()
         }
-    }
-    
-    func refreshPressed() {
-        getWeatherForecast()
     }
 }
 
